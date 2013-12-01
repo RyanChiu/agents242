@@ -13,6 +13,7 @@ $curmenuidx = 0;
 <head>
 <title><?php echo $title_for_layout; ?></title>
 <?php
+echo $this->Html->meta('icon', $this->Html->url('/../fav.png'));
 /*for default whole page layout*/
 echo $this->Html->css('main');
 
