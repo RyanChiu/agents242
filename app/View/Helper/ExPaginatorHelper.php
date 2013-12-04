@@ -10,7 +10,7 @@ class ExPaginatorHelper extends PaginatorHelper {
 	 * Adds and 'asc' or 'desc' class to the sort links
 	 * @see /cake/libs/view/helpers/PaginatorHelper#sort($title, $key, $options)
 	 */
-	function sort($key = null, $title, $options = array()) {
+	function sort($key = null, $title = null, $options = array()) {
  
 		// get current sort key & direction
 		$sortKey = $this->sortKey();

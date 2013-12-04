@@ -2,7 +2,7 @@
 class PhpcaptchaComponent extends Component {
 	var $Controller = null;
 	
-	function startup(&$controller) {
+	function startup(Controller $controller) {
 		App::import('Vendor', 'phpcaptcha/securimage');
 		$this->Controller = $controller;
 	}
