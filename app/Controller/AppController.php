@@ -6,6 +6,7 @@ class AppController extends Controller {
 	var $uses = array('Admin', 'Agent', 'Site', 'SiteExcluding', 'TerminalCookie');
 	var $curuser = null;
 	var $__locatekey = 'GTYHNBvfr4567ujm';
+	public $components = array('DebugKit.Toolbar');
 	/*
 	 * callbacks
 	 */
