@@ -40,7 +40,6 @@
  * $controllerPaths = array('this path to controllers', 'second full path to controllers', 'etc...');
  *
  */
-CakePlugin::load('DebugKit');
 if (!defined('LOCATE_COOKIE_NAME')) {
 	define('LOCATE_COOKIE_NAME', 'Locate_Cookie_Name');
 }
