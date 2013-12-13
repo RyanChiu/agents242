@@ -12,11 +12,11 @@ $userinfo = $this->Session->read('Auth.User.Account');
 <caption>Agent <?php if (!empty($rs)) echo $rs[0]['ViewMapping']['username']; ?></caption>
 <thead>
 <tr>
-	<th><b><?php echo $this->ExPaginator->sort('Campaignid', 'ViewMapping.campaignid'); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('Site Name', 'ViewMapping.sitename'); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('(Host Name)', 'ViewMapping.hostname'); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('(Abbreviation)', 'ViewMapping.abbr'); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('Status', 'ViewMapping.flag'); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('ViewMapping.campaignid', 'Campaignid'); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('ViewMapping.sitename', 'Site Name'); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('ViewMapping.hostname', '(Host Name)'); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('ViewMapping.abbr', '(Abbreviation)'); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('ViewMapping.flag', 'Status'); ?></b></th>
 </tr>
 </thead>
 <?php
