@@ -372,7 +372,7 @@ class LinksController extends AppController {
 		if (!empty($id)) {
 			$this->paginate = array(
 				'ViewMapping' => array(
-					'conditions' => array('agentid' => $id)
+					'conditions' => array('agentid' => array(-1, $id))
 				)
 			);
 			$rs = $this->paginate('ViewMapping');
