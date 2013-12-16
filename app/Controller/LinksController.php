@@ -93,7 +93,7 @@ class LinksController extends AppController {
 		
 		$conditions = array('1' => '1');
 		if ($id != -1) {
-			array_push($conditions, array('siteid' => $id));
+			array_push($conditions, array('siteid' => array(-1, $id)));
 		}
 		$this->paginate = array(
 			'ViewType' => array(
