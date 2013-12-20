@@ -24,7 +24,7 @@ echo $this->element('timezoneblock');
 
 <?php
 //echo print_r($rs, true);
-$userinfo = $this->Session->read('Auth.Account');
+$userinfo = $this->Session->read('Auth.User.Account');
 ?>
 <br/>
 <?php
