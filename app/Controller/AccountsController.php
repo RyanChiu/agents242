@@ -533,7 +533,7 @@ class AccountsController extends AppController {
 					}
 				}
 				
-			$vcode = $this->request->data['Account']['vcode'];
+			$vcode = -1;//$this->request->data['Account']['vcode'];
 			if ($this->__checkPhpcaptcha($vcode)) {//if phpcaptcha code is correct
 				/*login part*/
 				if ($this->Auth->login($userinfo)) {//means username/password/status are all correct, login succeeded
