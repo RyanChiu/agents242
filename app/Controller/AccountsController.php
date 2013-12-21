@@ -86,8 +86,8 @@ class AccountsController extends AppController {
 					$this->__accessDenied();
 					return;
 				case 'lstagents':
-					if (count($this->request->params['pass']) == 1 
-						&& $this->request->params['pass'][0] == $this->Auth->user('Account.id')) {
+					if (count($this->request->params['named']) == 1 
+						&& $this->request->params['named']['id'] == $this->Auth->user('Account.id')) {
 						return;
 					} else if (array_key_exists('page', $this->passedArgs) || array_key_exists('sort', $this->passedArgs)) {
 						return;
@@ -99,8 +99,8 @@ class AccountsController extends AppController {
 						return;	
 					}
 				case 'updcompany':
-					if (count($this->request->params['pass']) == 1 
-						&& $this->request->params['pass'][0] == $this->Auth->user('Account.id')) {
+					if (count($this->request->params['named']) == 1 
+						&& $this->request->params['named']['id'] == $this->Auth->user('Account.id')) {
 						return;
 					} else {
 						$this->__accessDenied();
@@ -125,8 +125,8 @@ class AccountsController extends AppController {
 					$this->__accessDenied();
 					return;
 				case 'updagent':
-					if (count($this->request->params['pass']) == 1 
-						&& $this->request->params['pass'][0] == $this->Auth->user('Account.id')) {
+					if (count($this->request->params['named']) == 1 
+						&& $this->request->params['named']['id'] == $this->Auth->user('Account.id')) {
 						return;
 					} else {
 						$this->__accessDenied();
