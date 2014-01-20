@@ -23,7 +23,7 @@ echo $this->Form->create(null, array('url' => array('controller' => 'links', 'ac
 ?>
 <table style="width:100%">
 <caption>
-	Please Select An Agent &amp; Generate Link Codes
+	Please get your link(s)
 	<br/>
 	<font style="color:red;">
 	<?php
