@@ -27,16 +27,21 @@ class Account extends AppModel {
 		)
 	);
 	
+	var $key = "";
+	
+	public function beforeSave($options = array()) {
+		parent::beforeSave($options);
+		
+		if (array_key_exists('password', $this->data['Account'])) {
+			$this->data['Account']['password'] = md5(
+				$this->data['Account']['password'] . $this->key
+			);
+		}
+		return true;
+	}
+	
 	var $status = array('-1' => 'unapproved', '0' => 'suspended', '1' => 'activated');
 	var $online = array('0' => 'offline', '1' => 'online');
-	
-	function hashPasswords($data) {
-		if (isset($data['Account']['password'])) {
-			$data['Account']['password'] = md5($data['Account']['password']);
-			return $data; 
-		}
-		return $data;
-	}
 	
 	function isCaseInsensitiveUnique($check) {
 		$r = $this->find('first',
