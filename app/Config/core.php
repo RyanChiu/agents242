@@ -105,6 +105,8 @@
  * thus not recommended for production applications.
  */
 	//Configure::write('App.baseUrl', env('SCRIPT_NAME'));
+	Configure::write('App.base', '/pdd');
+	Configure::write('App.baseUrl', '/pdd');
 
 /**
  * To configure CakePHP to use a particular domain URL
@@ -218,7 +220,6 @@
 	Configure::write('Session', array(
 		'defaults' => 'php'
 	));
-
 /**
  * A random string used in security hashing methods.
  */
