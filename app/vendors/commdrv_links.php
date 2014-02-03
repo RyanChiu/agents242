@@ -93,7 +93,7 @@ if (($argc - 1) == 2) {
 		while ($r = mysql_fetch_assoc($rs7)) {
 		$agname = $r['username'];
 		// set URL and other appropriate options
-		curl_setopt($ch, CURLOPT_URL, "http://bigbucksrevenue.com/_scripts/update-chan/addchan.php?a=sales@XuesEros.com&channel=$agname&code=$agname");
+		curl_setopt($ch, CURLOPT_URL, "http://bigbucksrevenue.com/_scripts/update-chan/addchan.php?a=webmasters@paydirtdollars.com&channel=$agname&code=$agname");
 				curl_setopt($ch, CURLOPT_HEADER, 0);
 				// grab URL and pass it to the browser
 		if (!curl_exec($ch)) {
