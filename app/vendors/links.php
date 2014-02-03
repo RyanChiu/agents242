@@ -19,13 +19,6 @@ $rs = mysql_query($sql, $zconn->dblink)
 */
 $path_parts = pathinfo($argv[0]);
 while ($row = mysql_fetch_assoc($rs)) {
-	$fn = $row['abbr'] . '_reg.php';
-	echo "--==execute " . $fn . " start.==--\n";
-	$output = array();
-	exec("php " . $path_parts["dirname"] . "/" . $fn . " needed", $output);
-	echo implode("\n", $output) . "\n";
-	echo "--==execute " . $fn . " end.==--\n";
-	
 	$fn = $row['abbr'] . '_campaigns.txt';
 	echo "--==import " . $fn . " start.==--\n";
 	$output = array();

@@ -79,6 +79,35 @@ if (($argc - 1) == 2) {
 		}
 	}
 	//exit(print_r($exagents, true));
+	/**
+	 * all the remote agent creat stuff should be in this "if" zone
+	 */
+	if ($siteid == 7) {//means siteid 7 will call the api which could add the agents to the remote server
+		$sql = "select distinct username from view_agents"
+		. " where username not in (select distinct username from view_mappings where siteid = '$siteid')";
+		$rs7 = mysql_query($sql, $zconn->dblink)
+		or die ("Something wrong with: " . mysql_error());
+	
+		$ch = curl_init();
+		echo "try to get into the loop of calling the creation API:\n";
+		while ($r = mysql_fetch_assoc($rs7)) {
+		$agname = $r['username'];
+		// set URL and other appropriate options
+		curl_setopt($ch, CURLOPT_URL, "http://bigbucksrevenue.com/_scripts/update-chan/addchan.php?a=sales@XuesEros.com&channel=$agname&code=$agname");
+				curl_setopt($ch, CURLOPT_HEADER, 0);
+				// grab URL and pass it to the browser
+		if (!curl_exec($ch)) {
+		echo ("error (number" . curl_errno($ch) . ") occured when adding $agname\n");
+		} else {
+		echo "[$agname]\n";
+		}
+		sleep(2);
+		}
+		echo "end the loop.\n";
+	
+		// close cURL resource, and free up system resources
+		curl_close($ch);
+	}
 	if ($campaignids[0] == "__SAME__") {
 		/*insert agent username as campaign id into agent_site_mappings table.*/
 		$sql = sprintf('insert into agent_site_mappings (siteid, agentid, campaignid)'
