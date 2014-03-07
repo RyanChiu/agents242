@@ -44,6 +44,8 @@ if (true || $ip == "66.180.199.11" || $ip == "127.0.0.1") {
 	$unique = strtolower($unique);
 	$ch = (isset($_GET['ch']) ? trim($_GET['ch']) : (isset($_POST['ch']) ? trim($_POST['ch']) : ''));
 	$ch = intval($ch);
+	$trxid = (isset($_GET['transactionid']) ? trim($_GET['transactionid']) : (isset($_POST['transactionid']) ? trim($_POST['transactionid']) : ''));
+	$trxid = intval($trxid);
 	$conn = new zmysqlConn();
 	$sql = "select a.*, g.companyid, b.id as 'typeid' 
 		from agent_site_mappings a, sites s, accounts n, types b, agents g, companies m 
