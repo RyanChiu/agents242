@@ -93,8 +93,8 @@ if (true || $ip == "66.180.199.11" || $ip == "127.0.0.1") {
 			}
 
 			if (!$donothing) {
-				$sql = "insert into stats (agentid, companyid, raws, uniques, chargebacks, signups, frauds, sales_number, typeid, siteid, campaignid, trxtime)"
-				. " values ($agid, $comid, $clicks, $uniques, 0, 0, 0, $sales, $typeid, $siteid, '$campid', '$trxtime')";
+				$sql = "insert into stats (agentid, companyid, raws, uniques, chargebacks, signups, frauds, sales_number, typeid, siteid, campaignid, trxtime, transactionid)"
+					. " values ($agid, $comid, $clicks, $uniques, 0, 0, 0, $sales, $typeid, $siteid, '$campid', '$trxtime', $trxid)";
 				//echo "$sql($i/$ch)\n"; continue; //for debug;
 	
 				if (mysql_query($sql, $conn->dblink) === false) {
