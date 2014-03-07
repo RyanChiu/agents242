@@ -173,30 +173,31 @@ if (!empty($rs)) {
 		?>
 		<th <?php echo count($typesv) > 4 ? '' : 'class="naClassHide"'; ?>>
 		<?php
-		echo $this->ExPaginator->sort('ViewTStats.sales_type4', 'Sale')
-			. '<br/><i>' . (count($typesv) > 4 ? $typesv[4] : 'N/A') . '</i>';
+		echo $this->ExPaginator->sort('ViewTStats.sales_type4', (count($typesv) > 4 ? $typesv[4] : 'N/A'))
 		?>
+		<br/><i style="font-size:12px;">Sale</i>
 		</th>
 		<th <?php echo count($typesv) > 3 ? '' : 'class="naClassHide"'; ?>>
 		<?php
-		echo $this->ExPaginator->sort('ViewTStats.sales_type3', 'Sale')
-			. '<br/><i>' . (count($typesv) > 3 ? $typesv[3] : 'N/A') . '</i>';
+		echo $this->ExPaginator->sort('ViewTStats.sales_type3', (count($typesv) > 3 ? $typesv[3] : 'N/A'))
 		?>
+		<br/><i style="font-size:12px;">Sale</i>
 		</th>
 		<th <?php echo count($typesv) > 2 ? '' : 'class="naClassHide"'; ?>>
 		<?php
-		echo $this->ExPaginator->sort('ViewTStats.sales_type2', 'Sale')
-			. '<br/><i>' . (count($typesv) > 2 ? $typesv[2] : 'N/A') . '</i>';
+		echo $this->ExPaginator->sort('ViewTStats.sales_type2', (count($typesv) > 2 ? $typesv[2] : 'N/A'))
 		?>
+		<br/><i style="font-size:12px;">Sale</i>
 		</th>
 		<th <?php echo count($typesv) > 1 ? '' : 'class="naClassHide"'; ?>>
 		<?php
-		echo $this->ExPaginator->sort('ViewTStats.sales_type1', 'Sale')
-			. '<br/><i>' . (count($typesv) > 1 ? $typesv[1] : 'N/A') . '</i>';
+		echo $this->ExPaginator->sort('ViewTStats.sales_type1', (count($typesv) > 1 ? $typesv[1] : 'N/A'))
 		?>
+		<br/><i style="font-size:12px;">Sale</i>
 		</th>
 		<th <?php echo in_array($selsite, array(-1, -2)) ? 'class="naClassHide"' : ''; // just do not show for the some site?>>
 		<?php echo $this->ExPaginator->sort('ViewTStats.net', 'Net'); ?>
+		<br/><i style="font-size:12px;">Sale</i>
 		</th>
 		<?php
 		if ($_show_pay_) {
