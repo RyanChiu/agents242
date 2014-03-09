@@ -138,64 +138,64 @@ if ($userinfo['role'] == 1) {
 		<div style="float:left"><font color="red">*</font></div>
 		</td>
 	</tr>
-	<tr>
+	<tr style="display:none;">
 		<td>Street Name &amp; Number : </td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Agent.street', array('label' => '', 'style' => 'width:390px;'));
+		echo $this->Form->input('Agent.street', array('label' => '', 'value' => 'N/A', 'style' => 'width:390px;'));
 		?>
 		</div>
 		</td>
 	</tr>
-	<tr>
+	<tr style="display:none;">
 		<td>City : </td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Agent.city', array('label' => '', 'style' => 'width:390px;'));
+		echo $this->Form->input('Agent.city', array('label' => '', 'value' => 'N/A', 'style' => 'width:390px;'));
 		?>
 		</div>
 		</td>
 	</tr>
-	<tr>
+	<tr style="display:none;">
 		<td>State &amp; Zip : </td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Agent.state', array('label' => '', 'style' => 'width:390px;'));
+		echo $this->Form->input('Agent.state', array('label' => '', 'value' => 'N/A', 'style' => 'width:390px;'));
 		?>
 		</div>
 		</td>
 	</tr>
-	<tr>
+	<tr style="display:none;">
 		<td>Country : </td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->select('Agent.country', $cts, array('style' => 'width:390px;'));
+		echo $this->Form->select('Agent.country', $cts, array('value' => 'PH', 'style' => 'width:390px;'));
 		?>
 		</div>
 		<div style="float:left"><font color="red">*</font></div>
 		</td>
 	</tr>
-	<tr>
+	<tr style="display:none;">
 		<td>Instant Messenger Contact : <br/><small>(AIM, Yahoo, Skype, MSN, ICQ</small></td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Agent.im', array('label' => '', 'style' => 'width:390px;'));
+		echo $this->Form->input('Agent.im', array('label' => '', 'value' => 'N/A', 'style' => 'width:390px;'));
 		?>
 		</div>
 		<div style="float:left"><font color="red">*</font></div>
 		</td>
 	</tr>
-	<tr>
+	<tr style="display:none;">
 		<td>Cell NO. : </td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Agent.cellphone', array('label' => '', 'style' => 'width:390px;'));
+		echo $this->Form->input('Agent.cellphone', array('label' => '', 'value' => 'N/A', 'style' => 'width:390px;'));
 		?>
 		</div>
 		<div style="float:left"><font color="red">*</font></div>

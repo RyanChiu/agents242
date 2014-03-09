@@ -140,7 +140,7 @@ if ($userinfo['role'] == 1) {
 		<div style="float:left"><font color="red">*</font></div>
 		</td>
 	</tr>
-	<tr>
+	<tr style="display:none;">
 		<td>Street Name &amp; Number : </td>
 		<td>
 		<div style="float:left">
@@ -150,7 +150,7 @@ if ($userinfo['role'] == 1) {
 		</div>
 		</td>
 	</tr>
-	<tr>
+	<tr style="display:none;">
 		<td>City : </td>
 		<td>
 		<div style="float:left">
@@ -160,7 +160,7 @@ if ($userinfo['role'] == 1) {
 		</div>
 		</td>
 	</tr>
-	<tr>
+	<tr style="display:none;">
 		<td>State &amp; Zip : </td>
 		<td>
 		<div style="float:left">
@@ -170,7 +170,7 @@ if ($userinfo['role'] == 1) {
 		</div>
 		</td>
 	</tr>
-	<tr>
+	<tr style="display:none;">
 		<td>Country : </td>
 		<td>
 		<div style="float:left">
@@ -188,7 +188,7 @@ if ($userinfo['role'] == 1) {
 		<div style="float:left"><font color="red">*</font></div>
 		</td>
 	</tr>
-	<tr>
+	<tr style="display:none;">
 		<td>Instant Messenger Contact : <br/><font size="1">(AIM, Yahoo, Skype, MSN, ICQ)</font></td>
 		<td>
 		<div style="float:left">
@@ -199,7 +199,7 @@ if ($userinfo['role'] == 1) {
 		<div style="float:left"><font color="red">*</font></div>
 		</td>
 	</tr>
-	<tr>
+	<tr style="display:none;">
 		<td>Cell NO. : </td>
 		<td>
 		<div style="float:left">
