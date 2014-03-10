@@ -595,7 +595,7 @@ echo $scripts_for_layout;
 						<script language="javascript">
 			        	function __zShowClock() {
 			        		var now = new Date();
-				        	now.setHours(now.getHours() - 5);
+				        	now.setHours(now.getHours() - 4);
 				        	var nowStr = now.toUTCString();
 				        	nowStr = nowStr.replace("GMT", "EDT"); //for firefox browser
 				        	nowStr = nowStr.replace("UTC", "EDT"); //for IE browser
