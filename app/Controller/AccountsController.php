@@ -138,17 +138,17 @@ class AccountsController extends AppController {
 	
 	var $emailErr = "not filled.";
 	function __sendemail($subject = 'empty', $content = 'empty',
-		$from = 'admin@PayDirtDollars.com',
-		$mailto = 'admin@PayDirtDollars.com',
-		$replyto = 'admin@PayDirtDollars.com') {
+		$from = 'support@paydirtdollars.com',
+		$mailto = 'support@paydirtdollars.com',
+		$replyto = 'support@paydirtdollars.com') {
 		App::uses('CakeEmail', 'Network/Email');
 		$cakeEmail = new CakeEmail(
 			array(
 				'port'=>'25',
 				'timeout'=>'60',
 				'host' => 'smtpout.asia.secureserver.net',
-				'username'=>'admin@paydirtdollars.com',
-				'password'=>'Adutta11',
+				'username'=>'support@paydirtdollars.com',
+				'password'=>'Alor1333.',
 				'transport' => 'Smtp'
 			)
 		);
@@ -170,8 +170,8 @@ class AccountsController extends AppController {
 			'port'=>'25',
 			'timeout'=>'60',
 			'host' => 'smtpout.asia.secureserver.net',
-			'username'=>'admin@paydirtdollars.com',
-			'password'=>'Adutta11'
+			'username'=>'support@paydirtdollars.com',
+			'password'=>'Alor1333.'
 		);
 		$this->Email->from = '<' . $from . '>';
 		$this->Email->to = '<' . $mailto . '>';
@@ -700,7 +700,7 @@ class AccountsController extends AppController {
 						'Your PayDirtDollars Password',
 						"Hi,\nYour PayDirtDollars password is:" . $r['Account']['originalpwd'] . "\n"
 						. "\nThanks,\nPayDirtDollars webmaster.",//must use " instead of ' at this $content parameter
-						'admin@PayDirtDollars.com',
+						'support@paydirtdollars.com',
 						$_r['Company']['manemail']
 					);
 					if ($issent) {
@@ -733,7 +733,7 @@ class AccountsController extends AppController {
 						'Your PayDirtDollars Password',
 						"Hi,\nYour PayDirtDollars password is:" . $r['Account']['originalpwd'] . "\n"
 						. "\nThanks,\nPayDirtDollars webmaster.",//must use " instead of ' at this $content parameter
-						'admin@PayDirtDollars.com',
+						'support@paydirtdollars.com',
 						$_r['Agent']['email']
 					);
 					if ($issent) {
@@ -767,7 +767,7 @@ class AccountsController extends AppController {
 			$issent = $this->__sendemail(
 				$this->request->data['FakeContactUs']['subject'],
 				"From:" . $this->request->data['FakeContactUs']['email'] . "\n\n" . $this->request->data['FakeContactUs']['message'],
-				"admin@PayDirtDollars.com",
+				"support@paydirtdollars.com",
 				"support@PayDirtDollars.com",
 				$this->request->data['FakeContactUs']['email']
 			);
@@ -986,7 +986,7 @@ class AccountsController extends AppController {
 						. $this->request->data['Account']['username']
 						. "' created, please check it out.",
 						"empty",
-						"admin@PayDirtDollars.com",
+						"support@paydirtdollars.com",
 						"newaccounts@PayDirtDollars.com"
 					);
 
@@ -1158,7 +1158,7 @@ class AccountsController extends AppController {
 							. $this->request->data['Account']['username'] 
 							. "' created, please check it out.",
 						"empty",
-						"admin@PayDirtDollars.com",
+						"support@paydirtdollars.com",
 						"newaccounts@PayDirtDollars.com"
 					);
 					/*redirect to some page*/ 
@@ -1975,10 +1975,10 @@ class AccountsController extends AppController {
 				/*
 				$mailto = ''
 					//. strtolower($r['ViewAgent']['officename']) . '_qa@cleanchattersinc.com';
-					. 'admin@PayDirtDollars.com';
+					. 'support@paydirtdollars.com';
 				if ($this->__sendemail(
 						$subject, $content,
-						'admin@PayDirtDollars.com',
+						'support@paydirtdollars.com',
 						$mailto
 					) != true) {
 					$fmsg = '(Failed to email out.<0>)';
@@ -1986,9 +1986,9 @@ class AccountsController extends AppController {
 				*/
 				if ($this->__sendemail(
 						$subject, $content,
-						'admin@PayDirtDollars.com',
+						'support@paydirtdollars.com',
 						//'qa@cleanchattersinc.com'
-						'admin@PayDirtDollars.com'
+						'support@paydirtdollars.com'
 					) != true) {
 					$fmsg = '(Failed to email out.<1>)';
 				};
