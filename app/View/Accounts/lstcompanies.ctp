@@ -113,6 +113,7 @@ echo $this->Form->button('Add Office',
 	<th><b><?php echo $this->ExPaginator->sort('ViewCompany.agenttotal', 'Total Agents'); ?></b></th>
 	<th><b><?php echo $this->ExPaginator->sort('ViewCompany.username4m', 'Username'); ?></b></th>
 	<th><b><?php echo $this->ExPaginator->sort('ViewCompany.originalpwd', 'Password'); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('ViewCompany.manemail', 'Email'); ?></b></th>
 	<th><b><?php echo $this->ExPaginator->sort('ViewCompany.regtime', 'Registered'); ?></b></th>
 	<th><b><?php echo $this->ExPaginator->sort('ViewCompany.status', 'Status'); ?></b></th>
 	<th><b>Operation</b></th>
@@ -157,6 +158,7 @@ foreach ($rs as $r):
 	</td>
 	<td><?php echo $r['ViewCompany']['username']; ?></td>
 	<td><?php echo $r['ViewCompany']['originalpwd']; ?></td>
+	<td><?php echo $r['ViewCompany']['manemail']; ?></td>
 	<td><?php echo $r['ViewCompany']['regtime']; ?></td>
 	<td><?php echo $status[$r['ViewCompany']['status']]; ?></td>
 	<td align="center">
