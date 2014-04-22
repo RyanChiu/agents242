@@ -20,13 +20,22 @@ if (empty($_POST) && empty($_GET)) {
 			$logpath
 	);
 } else {
-	error_log(
-			$from . "\n"
-			. "GET:\n" . print_r($_GET, true) . "\n"
-			. "POST:\n" . print_r($_POST, true) . $ending,
+	if(!empty($_POST)) {
+		error_log(
+			$from . "(POST)"
+			. "\n" . print_r($_POST, true) . $ending,
 			3,
 			$logpath
-	);
+		);
+	}
+	if(!empty($_GET)) {
+		error_log(
+			$from . "(GET)"
+			. "\n" . print_r($_GET, true) . $ending,
+			3,
+			$logpath
+		);
+	}
 }
 
 $err = "";
