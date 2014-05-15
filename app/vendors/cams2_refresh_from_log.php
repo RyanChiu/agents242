@@ -60,6 +60,11 @@ while ($i < $count) {
 		$p3 = stripos($fstr, "=>", $p1);
 		$stamp = substr($fstr, $p3 + strlen("=>"), $p2 - $p3);
 		$stamp = trim($stamp);
+		$p1 = strripos($fstr, '[transactionid]', $pos - strlen($fstr));
+		$p2 = stripos($fstr, "\n", $p1);
+		$p3 = stripos($fstr, "=>", $p1);
+		$trxid = substr($fstr, $p3 + strlen("=>"), $p2 - $p3);
+		$trxid = trim($trxid);
 		if (!empty($stamp)) {
 			$ts = DateTime::createFromFormat("Ymd_His00", $stamp);
 			if ($ts !== false) {
@@ -74,6 +79,7 @@ while ($i < $count) {
 
 	$posts[$i] = array(
 		'trxtime' => $trxtime,
+		'transactionid' => $trxid,
 		'type' => $type,
 		'agent' => $agent,
 		'ch' => $ch,
