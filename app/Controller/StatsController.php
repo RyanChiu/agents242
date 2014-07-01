@@ -18,7 +18,7 @@ class StatsController extends AppController {
 	);
 	
 	var $curuser = null;
-	var $__limit = 300;
+	var $__limit = 500;
 	var $__runid = -1;
 		
 	/*callbacks*/
