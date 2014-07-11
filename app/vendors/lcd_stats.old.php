@@ -52,26 +52,20 @@ if (empty($agents)) {
 /*
 $aid = 'YOUR LOADEDCASH AFFILIATE ID HERE';
 $username = 'YOUR LOADEDCASH USERNAME HERE';
--$password = 'YOUR LOADEDCASH PASSWORD HERE';
-$apiToken = 'YOUR LOADEDCASH API TOKEN FOR ramelita HERE';
+$password = 'YOUR LOADEDCASH PASSWORD HERE';
 */
 $aid = '54330';
 $username = 'ramelita';
-//-$password = 'PDD54321A';
-//$apiToken = 'aRpUdhqNWfPUtB60fYcIQWavJ8z3d6g';
-$apiToken = 'oxnT7VrHzuAcuhBnUpt4YOUzPiHafSR3';
+$password = 'PDD54321A';
 
 $key_d_t = gmdate("Y-m-d H:i:s"); // Greenwich Mean Date Time
-//$key = md5($username . $password . $key_d_t);
-$token = md5($username . $apiToken . $key_d_t);
+$key = md5($username . $password . $key_d_t);
 
 $start_date = $date;//'2011-02-13';
 $end_date = $date;//'2011-02-15';
 
-$url = //'http://www.loadedcash.com/api.php?response_type=xml&json={"key":"' .
-	'http://www.loadedcash.com/api.php?response_type=xml&json={"token":"' .
-	//$key . '","key_d_t":"' . urlencode($key_d_t) .
-	$token . '","key_d_t":"' . urlencode($key_d_t) .
+$url = 'http://www.loadedcash.com/api.php?response_type=xml&json={"key":"' .
+	$key . '","key_d_t":"' . urlencode($key_d_t) .
 	'","c":"affiliateStats","a":"trafficStats","params":{"aid":"' . $aid .
 	'","start_date":"' . $start_date . '","end_date":"' . $end_date . '"}}';
 /*
