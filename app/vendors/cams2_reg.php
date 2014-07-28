@@ -4,6 +4,8 @@
  * 1,remotely register all the agnets no mater what on "all"
  * or
  * 2,remotely register only those agents who's not mapped into agent_site_mappings on "needed"
+ * 
+ * And actually, it'll register the agents for all the sites which's about from BBR, like "cams3" or sth. like that.
  */
 
 include 'zmysqlConn.class.php';
