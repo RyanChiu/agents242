@@ -119,9 +119,15 @@ if (true || $ip == "66.180.199.11" || $ip == "127.0.0.1") {
 		}
 		$i++;
 	}
-	if ($i == 0) error_log("no such an agent '$agent'.\n", 3, $logpath);
+	if ($i == 0) {
+		error_log("no such an agent '$agent'.\n", 3, $logpath);
+		echo "no such an agent '$agent'.";
+	} else {
+		echo "ok";
+	}
 } else {
 	$s = "illegal visit";
+	echo $s;
 }
 
 /*
