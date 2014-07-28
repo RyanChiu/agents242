@@ -15,7 +15,7 @@ $ending =  " [" . $ip . "/" . $now->format("Y-m-d H:i:s") . "($tz)]\n";
 error_log("######\n", 3, $logpath);
 if (empty($_POST) && empty($_GET)) {
 	error_log(
-		$from . "Nothing posted here" . $ending,
+		$from . "\nNothing posted here" . $ending,
 		3,
 		$logpath
 	);
