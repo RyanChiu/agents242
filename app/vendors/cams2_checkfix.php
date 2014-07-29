@@ -96,8 +96,9 @@ if ($totals != $dbtotals) {
 	//exit(print_r($dbsales, true) . "\n"); //for debug;
 	$diff_less = array_diff($trxes, $dbtrxes);
 	$diff_more = array_diff($dbtrxes, $trxes);
-	echo "less ones: \n"; print_r($diff_less);
-	echo "more ones: \n"; print_r($diff_more);
+	echo "ours: " . count($dbtrxes) . ", api's: " . count($trxes) . "\n";
+	echo "less ones: \n"; print_r($diff_less);//PDD's less than BBR's 
+	echo "more ones: \n"; print_r($diff_more);//BBR's less than PDD's
 } else {
 	exit("great! $totals/$dbtotals, matched. (" . date("Y-m-d h:i:s") . ")\n");
 }
