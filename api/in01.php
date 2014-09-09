@@ -64,10 +64,10 @@ if (true || $ip == "66.180.199.11" || $ip == "127.0.0.1") {
 			and a.agentid = n.id and n.username = '$agent'
 		ORDER BY typeid";
 	$rs = mysql_query($sql, $conn->dblink);
-	$idxstartwith = 4;//should be changed with different site
-	$i = $idxstartwith;
+	$chsfrombbr = array(4, 5, 6);// !!! MUST MAKE SURE ABOUT THIS ARRAY WITH BBR
+	$i = 0;
 	while ($r = mysql_fetch_assoc($rs)) {
-		if ($i == $ch) {
+		if ($chsfrombbr[$i] == $ch) {
 			$typeid = $r['typeid'];
 			$agid = $r['agentid'];
 			$comid = $r['companyid'];
@@ -124,10 +124,14 @@ if (true || $ip == "66.180.199.11" || $ip == "127.0.0.1") {
 			}
 		}
 		$i++;
+		if ($i >= count($chsfrombbr)) break;
 	}
-	if ($i == $idxstartwith) {
+	if ($i == 0) {
 		error_log("no such an agent '$agent'.\n", 3, $logpath);
 		echo "no such an agent '$agent'.";
+	} else if ($i >= count($chsfrombbr)) {
+		error_log("no such a type.\n", 3, $logpath);
+		echo "no such a type.";
 	} else {
 		echo "ok";
 	}
