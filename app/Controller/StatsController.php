@@ -487,6 +487,12 @@ class StatsController extends AppController {
 						. "sum(if(typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 1, 1), sales_number, 0)) as sales_type2,"
 						. "sum(if(typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 2, 1), sales_number, 0)) as sales_type3,"
 						. "sum(if(typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 3, 1), sales_number, 0)) as sales_type4,"
+						. "sum(if(typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 4, 1), sales_number, 0)) as sales_type5,"
+						. "sum(if(typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 5, 1), sales_number, 0)) as sales_type6,"
+						. "sum(if(typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 6, 1), sales_number, 0)) as sales_type7,"
+						. "sum(if(typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 7, 1), sales_number, 0)) as sales_type8,"
+						. "sum(if(typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 8, 1), sales_number, 0)) as sales_type9,"
+						. "sum(if(typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 9, 1), sales_number, 0)) as sales_type10,"
 						. "(SELECT price FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 0, 1)) as sales_type1_payout," 
 						. "(SELECT earning FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 0, 1)) as sales_type1_earning,"
 						. "(SELECT price FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 1, 1)) as sales_type2_payout," 
@@ -495,6 +501,18 @@ class StatsController extends AppController {
 						. "(SELECT earning FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 2, 1)) as sales_type3_earning,"
 						. "(SELECT price FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 3, 1)) as sales_type4_payout," 
 						. "(SELECT earning FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 3, 1)) as sales_type4_earning,"
+						. "(SELECT price FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 4, 1)) as sales_type5_payout,"
+						. "(SELECT earning FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 4, 1)) as sales_type5_earning,"
+						. "(SELECT price FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 5, 1)) as sales_type6_payout,"
+						. "(SELECT earning FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 5, 1)) as sales_type6_earning,"
+						. "(SELECT price FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 6, 1)) as sales_type7_payout,"
+						. "(SELECT earning FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 6, 1)) as sales_type7_earning,"
+						. "(SELECT price FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 7, 1)) as sales_type8_payout,"
+						. "(SELECT earning FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 7, 1)) as sales_type8_earning,"
+						. "(SELECT price FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 8, 1)) as sales_type9_payout,"
+						. "(SELECT earning FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 8, 1)) as sales_type9_earning,"
+						. "(SELECT price FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 9, 1)) as sales_type10_payout,"
+						. "(SELECT earning FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 9, 1)) as sales_type10_earning,"
 						. $this->__runid . ", " . $group
 						. " from stats "
 						. $where . $groupby;
@@ -563,14 +581,32 @@ class StatsController extends AppController {
 				. "sum(if(typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 1, 1), sales_number, 0)) as sales_type2,"
 				. "sum(if(typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 2, 1), sales_number, 0)) as sales_type3,"
 				. "sum(if(typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 3, 1), sales_number, 0)) as sales_type4,"
-				. "(SELECT price FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 0, 1)) as sales_type1_payout,"
+				. "sum(if(typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 4, 1), sales_number, 0)) as sales_type5,"
+				. "sum(if(typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 5, 1), sales_number, 0)) as sales_type6,"
+				. "sum(if(typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 6, 1), sales_number, 0)) as sales_type7,"
+				. "sum(if(typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 7, 1), sales_number, 0)) as sales_type8,"
+				. "sum(if(typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 8, 1), sales_number, 0)) as sales_type9,"
+				. "sum(if(typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 9, 1), sales_number, 0)) as sales_type10,"
+				. "(SELECT price FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 0, 1)) as sales_type1_payout," 
 				. "(SELECT earning FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 0, 1)) as sales_type1_earning,"
-				. "(SELECT price FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 1, 1)) as sales_type2_payout,"
+				. "(SELECT price FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 1, 1)) as sales_type2_payout," 
 				. "(SELECT earning FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 1, 1)) as sales_type2_earning,"
-				. "(SELECT price FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 2, 1)) as sales_type3_payout,"
+				. "(SELECT price FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 2, 1)) as sales_type3_payout," 
 				. "(SELECT earning FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 2, 1)) as sales_type3_earning,"
-				. "(SELECT price FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 3, 1)) as sales_type4_payout,"
+				. "(SELECT price FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 3, 1)) as sales_type4_payout," 
 				. "(SELECT earning FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 3, 1)) as sales_type4_earning,"
+				. "(SELECT price FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 4, 1)) as sales_type5_payout,"
+				. "(SELECT earning FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 4, 1)) as sales_type5_earning,"
+				. "(SELECT price FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 5, 1)) as sales_type6_payout,"
+				. "(SELECT earning FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 5, 1)) as sales_type6_earning,"
+				. "(SELECT price FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 6, 1)) as sales_type7_payout,"
+				. "(SELECT earning FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 6, 1)) as sales_type7_earning,"
+				. "(SELECT price FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 7, 1)) as sales_type8_payout,"
+				. "(SELECT earning FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 7, 1)) as sales_type8_earning,"
+				. "(SELECT price FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 8, 1)) as sales_type9_payout,"
+				. "(SELECT earning FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 8, 1)) as sales_type9_earning,"
+				. "(SELECT price FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 9, 1)) as sales_type10_payout,"
+				. "(SELECT earning FROM fees where typeid = (SELECT id FROM types WHERE siteid = $selsite order by id limit 9, 1)) as sales_type10_earning,"
 				. $this->__runid . ", " . $group
 				. " from stats "
 				. $where . $groupby;
@@ -621,6 +657,8 @@ class StatsController extends AppController {
 		$totals = array(
 			'raws' => 0, 'uniques' => 0, 'chargebacks' => 0, 'signups' => 0, 'frauds' => 0,
 			'sales_type1' => 0, 'sales_type2' => 0, 'sales_type3' => 0, 'sales_type4' => 0,
+			'sales_type5' => 0, 'sales_type6' => 0, 'sales_type7' => 0, 'sales_type8' => 0,
+			'sales_type9' => 0, 'sales_type10' => 0,
 			'net' => 0, 'payouts' => 0, 'earnings' => 0
 		);
 		$rs = $this->ViewTStats->find('all',
@@ -636,6 +674,12 @@ class StatsController extends AppController {
 					'sum(sales_type2) as sales_type2',
 					'sum(sales_type3) as sales_type3',
 					'sum(sales_type4) as sales_type4',
+					'sum(sales_type5) as sales_type5',
+					'sum(sales_type6) as sales_type6',
+					'sum(sales_type7) as sales_type7',
+					'sum(sales_type8) as sales_type8',
+					'sum(sales_type9) as sales_type9',
+					'sum(sales_type10) as sales_type10',
 					'sum(net) as net',
 					'sum(payouts) as payouts',
 					'sum(earnings) as earnings'
@@ -654,6 +698,12 @@ class StatsController extends AppController {
 			$totals['sales_type2'] = $rs[0][0]['sales_type2'];
 			$totals['sales_type3'] = $rs[0][0]['sales_type3'];
 			$totals['sales_type4'] = $rs[0][0]['sales_type4'];
+			$totals['sales_type5'] = $rs[0][0]['sales_type5'];
+			$totals['sales_type6'] = $rs[0][0]['sales_type6'];
+			$totals['sales_type7'] = $rs[0][0]['sales_type7'];
+			$totals['sales_type8'] = $rs[0][0]['sales_type8'];
+			$totals['sales_type9'] = $rs[0][0]['sales_type9'];
+			$totals['sales_type10'] = $rs[0][0]['sales_type10'];
 			$totals['net'] = $rs[0][0]['net'];
 			$totals['payouts'] = $rs[0][0]['payouts'];
 			$totals['earnings'] = $rs[0][0]['earnings'];
