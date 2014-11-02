@@ -131,7 +131,7 @@ if (true || $ip == "66.180.199.11" || $ip == "127.0.0.1") {
 		echo "no such an agent '$agent'.";
 	} else if ($i >= count($chsfrombbr)) {
 		error_log("no such a type.\n", 3, $logpath);
-		echo "no such a type.";
+		echo "no such a type.\n";
 	} else {
 		echo "ok";
 	}
