@@ -595,7 +595,15 @@ echo $scripts_for_layout;
 						<script language="javascript">
 			        	function __zShowClock() {
 			        		var now = new Date();
-				        	now.setHours(now.getHours() - 4);
+			        		/*
+			        		2 a.m. on the Second Sunday in March 
+			        		to 2 a.m. on the First Sunday of November, 
+			        		GMT - 4 (Other time, GMT - 5)
+			        		*/
+			        		if (now.getMonth() == 3) {
+			        		} else if (now.getMonth() == 11) {
+			        		}
+				        	now.setHours(now.getHours() - 5);
 				        	var nowStr = now.toUTCString();
 				        	nowStr = nowStr.replace("GMT", "EDT"); //for firefox browser
 				        	nowStr = nowStr.replace("UTC", "EDT"); //for IE browser
