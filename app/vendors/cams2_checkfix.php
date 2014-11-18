@@ -69,8 +69,11 @@ foreach ($lines as $line) {
 		$line = trim($line);
 		parse_str($line, $sale);
 		//echo "($i)\n" . print_r($sale, true) . "\n"; //for debug
-		array_push($sales, $sale);
-		array_push($trxes, $sale['transactionid']);
+		$chs = explode(",", CAMS2_CHS);
+		if (in_array($sale["ch"], $chs)) {
+			array_push($sales, $sale);
+			array_push($trxes, $sale['transactionid']);
+		}
 	}
 	
 	$i++;
