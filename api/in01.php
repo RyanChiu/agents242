@@ -64,7 +64,7 @@ if (true || $ip == "66.180.199.11" || $ip == "127.0.0.1") {
 			and a.agentid = n.id and n.username = '$agent'
 		ORDER BY typeid";
 	$rs = mysql_query($sql, $conn->dblink);
-	$chsfrombbr = array(4, 5, 6, 7);// !!! MUST MAKE SURE ABOUT THIS ARRAY WITH BBR
+	$chsfrombbr = explode(",", CAMS3_CHS);;// !!! MUST MAKE SURE ABOUT THIS ARRAY WITH BBR
 	$i = 0;
 	while ($r = mysql_fetch_assoc($rs)) {
 		if ($chsfrombbr[$i] == $ch) {

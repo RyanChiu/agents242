@@ -1,4 +1,6 @@
 <?php
+	define("CAMS2_CHS", "0,1,2,3");
+	define("CAMS3_CHS", "4,5,6,7");
 	/*
 	 * routines area
 	 */
