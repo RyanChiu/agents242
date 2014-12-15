@@ -4,9 +4,9 @@
 	 * THE CONSTANT NAME combined with 
 	 * upper cased abbreviation of the site and "_CHS".
 	 * say CAMS2_CHS is for site with abbreviation "cams2".
-	 * THE CONSTANT VALUE is a serial numbers seperated by ",".
+	 * THE CONSTANT VALUE is a set of numbers seperated by ",".
 	 */
-	define("CAMS2_CHS", "0,1,2,3");
+	define("CAMS2_CHS", "0,1,2,3,8,9");
 	define("CAMS3_CHS", "4,5,6,7");
 	/*
 	 * routines area
