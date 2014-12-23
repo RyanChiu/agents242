@@ -22,6 +22,8 @@ class ExPaginatorHelper extends PaginatorHelper {
 			$options['class'] = $sortDir;
  
 		}
+		
+		$options['direction'] = 'desc';
  
 		return parent::sort($key, $title, $options);
  
