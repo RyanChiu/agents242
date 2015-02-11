@@ -66,8 +66,10 @@ if (true || $ip == "66.180.199.11" || $ip == "127.0.0.1") {
 	$rs = mysql_query($sql, $conn->dblink);
 	$chsfrombbr = explode(",", CAMS3_CHS);;// !!! MUST MAKE SURE ABOUT THIS ARRAY WITH BBR
 	$i = 0;
+	$chs_exist = false;
 	while ($r = mysql_fetch_assoc($rs)) {
 		if ($chsfrombbr[$i] == $ch) {
+			$chs_exist = true;
 			$typeid = $r['typeid'];
 			$agid = $r['agentid'];
 			$comid = $r['companyid'];
@@ -129,11 +131,14 @@ if (true || $ip == "66.180.199.11" || $ip == "127.0.0.1") {
 	if ($i == 0) {
 		error_log("no such an agent '$agent'.\n", 3, $logpath);
 		echo "no such an agent '$agent'.";
-	} else if ($i >= count($chsfrombbr)) {
-		error_log("no such a type.\n", 3, $logpath);
-		echo "no such a type.\n";
 	} else {
-		echo "ok";
+		if ($chs_exist) {
+			error_log("ok.\n", 3, $logpath);
+			echo "ok";
+		} else {
+			error_log("no such a type.\n", 3, $logpath);
+			echo "no such a type.\n";
+		}
 	}
 } else {
 	$s = "illegal visit";
