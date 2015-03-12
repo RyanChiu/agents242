@@ -8,6 +8,7 @@
 	 */
 	define("CAMS2_CHS", "0,1,2,3,8,9");
 	define("CAMS3_CHS", "4,5,6,7");
+	define("BBRD_CHS", "5,6");
 	/*
 	 * routines area
 	 */
