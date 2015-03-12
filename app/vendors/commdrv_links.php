@@ -82,7 +82,7 @@ if (($argc - 1) == 2) {
 	/**
 	 * all the remote agent creat stuff should be in this "if" zone
 	 */
-	if ($siteid == 7) {//means siteid 7 will call the api which could add the agents to the remote server
+	if ($siteid == 7 || $siteid == 9) {//means siteid 7 or 9 will call the api which could add the agents to the remote server
 		$sql = "select distinct username from view_agents"
 		. " where username not in (select distinct username from view_mappings where siteid = '$siteid')";
 		$rs7 = mysql_query($sql, $zconn->dblink)
@@ -93,7 +93,8 @@ if (($argc - 1) == 2) {
 		while ($r = mysql_fetch_assoc($rs7)) {
 		$agname = $r['username'];
 		// set URL and other appropriate options
-		curl_setopt($ch, CURLOPT_URL, "http://bigbucksrevenue.com/_scripts/update-chan/addchan.php?a=webmasters@paydirtdollars.com&channel=$agname&code=$agname");
+		$account_email = ($siteid == 7 ? "webmasters@paydirtdollars.com" : ($siteid == 9 ? "support@paydirtdollars.com" : ""));
+		curl_setopt($ch, CURLOPT_URL, "http://bigbucksrevenue.com/_scripts/update-chan/addchan.php?a=$account_email&channel=$agname&code=$agname");
 				curl_setopt($ch, CURLOPT_HEADER, 0);
 				// grab URL and pass it to the browser
 		if (!curl_exec($ch)) {
@@ -103,7 +104,7 @@ if (($argc - 1) == 2) {
 		}
 		sleep(2);
 		}
-		echo "end the loop.\n";
+		echo "end the loop.(site id:$siteid)\n";
 	
 		// close cURL resource, and free up system resources
 		curl_close($ch);
