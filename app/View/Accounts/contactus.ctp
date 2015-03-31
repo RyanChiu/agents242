@@ -43,7 +43,11 @@ echo $this->Form->create(null, array('controller' => 'accounts', 'action' => 'co
 		</td>
 	</tr>
 	<tr>
-		<td></td>
+		<td>
+		<?php
+		echo $this->Form->input('FakeContactUs.username', array('type' => 'hidden', 'value' => $userinfo['username'])); 
+		?>
+		</td>
 		<td>
 		<?php
 		echo $this->Form->submit('Send', array('style' => 'width:100px;'));

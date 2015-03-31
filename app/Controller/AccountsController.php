@@ -765,10 +765,10 @@ class AccountsController extends AppController {
 			/*send the message*/
 			$this->request->data['FakeContactUs']['email'] = trim($this->request->data['FakeContactUs']['email']);
 			$issent = $this->__sendemail(
-				$this->request->data['FakeContactUs']['subject'],
+				"[User name: " . $this->request->data['FakeContactUs']['username'] . "] " . $this->request->data['FakeContactUs']['subject'],
 				"From:" . $this->request->data['FakeContactUs']['email'] . "\n\n" . $this->request->data['FakeContactUs']['message'],
 				"support@paydirtdollars.com",
-				"support@PayDirtDollars.com",
+				"support@paydirtdollars.com",
 				$this->request->data['FakeContactUs']['email']
 			);
 			$redirecturl = '';
