@@ -39,8 +39,8 @@ if ($argv[1] == 'daily') {
 
 $zconn = new zmysqlConn();
 
-/*find each everyone abbr from sites*/
-$sql = sprintf('select abbr from sites');
+/*find each everyone abbr from sites where srcdriver is not null*/
+$sql = sprintf('select abbr, srcdriver from sites where srcdriver is not null');
 $rs = mysql_query($sql, $zconn->dblink)
 	or die ("Something wrong with: " . mysql_error());
 /*
