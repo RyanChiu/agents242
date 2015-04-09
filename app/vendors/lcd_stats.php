@@ -139,6 +139,7 @@ foreach ($xml->children() as $item) {
 	$campaignlabel = "" . $item->campaign_label;
 	$prefix = "a" . $aid . "_";
 	$prefix_x = $prefix . "-";
+	if (empty($campaignlabel)) continue;
 	if (!(strpos($campaignlabel, $prefix_x) === false)) {
 		continue;
 	}
@@ -170,15 +171,15 @@ foreach ($xml->children() as $item) {
 			}
 			$row = mysql_fetch_assoc($result);
 			$frauds = empty($row['frauds']) ? 0 : $row['frauds'];
-		}
-		
-		$sql = 'delete from stats where ' . $conditions;
-		mysql_query($sql, $zconn->dblink)
-			or die ("Something wrong with: " . mysql_error());
-		$_m = $m;
-		$m += mysql_affected_rows();
-		if (($m - $_m) != 1) {
-			echo (($m - $_m) . " row(s) deleted!\n");
+			
+			$sql = 'delete from stats where ' . $conditions;
+			mysql_query($sql, $zconn->dblink)
+				or die ("Something wrong with: " . mysql_error());
+			$_m = $m;
+			$m += mysql_affected_rows();
+			if (($m - $_m) != 1) {
+				echo (($m - $_m) . " row(s) deleted!\n");
+			}
 		}
 		
 		$sql = sprintf(
