@@ -271,4 +271,17 @@
 			}
 		}
 	}
+	
+	/*
+	 * try to judge if it's in daylight saving time (summer time).
+	 * 1 means true, and 0 means false;
+	 */
+	function is_dst()
+	{
+		$timezone = date('e'); //get local time zone
+		date_default_timezone_set('US/Pacific-New'); //set time zone
+		$dst = date('I'); //judge
+		date_default_timezone_set($timezone); //set time zone back
+		return $dst;
+	}
 ?>
