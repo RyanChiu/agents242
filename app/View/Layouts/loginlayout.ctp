@@ -15,6 +15,10 @@ echo $this->Html->script('jQuery/Datepicker/jquery-1.3.2.min');
 echo $this->Html->script('cufon/cufon-yui');
 echo $this->Html->script('cufon/Chiller_400.font');
 
+/*for fancybox*/
+echo $this->Html->css('fancybox/jquery.fancybox-1.3.3', null, array('media' => 'screen'));
+echo $this->Html->script('fancybox/jquery.fancybox-1.3.3.pack');
+
 echo $scripts_for_layout;
 
 ?>
@@ -69,6 +73,31 @@ echo $scripts_for_layout;
 		</div>
 		<!-- End Footer -->
 	</div>
+	
+	<!-- Pop up window for redirecting to NCC -->
+	<div style="display:none">
+		<a id="attentions_link" href="#attentions_for_agents">show attentions</a>
+	</div>
+	<div style="display:none">
+		<div id="attentions_for_agents" style="width:800px;color:red;">
+		WELCOME TO NEW  IMPROVED PDD STATS.  OUR NEW NAME IS: "NINJA'S CHAT CLUB" PLEASE USE THIS URL
+		(<a href="http://www.ninjaschatclub.com/NinjasChatClub">http://www.ninjaschatclub.com/NinjasChatClub</a>)
+		TO LOG IN TO YOUR NEW STATS.
+		<br/>
+		TO LOG IN USE SAME USER  NAME AND PASSWORD YOU USED ON PDD.
+		</div>
+	</div>
+	<script type="text/javascript">
+		jQuery(document).ready(function() {
+			jQuery("a#attentions_link").fancybox({
+				'type': 'inline',
+				'overlayOpacity': 0.6,
+				'overlayColor': '#0A0A0A',
+				'modal': true
+			});
+			jQuery("a#attentions_link").click();
+		});
+	</script>
 	
 	<!-- To avoid delays, initialize Cufón before other scripts at the bottom -->
 	<script type="text/javascript"> Cufon.now(); </script>
